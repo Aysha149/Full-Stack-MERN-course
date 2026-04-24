@@ -1,0 +1,12 @@
+function factorial(n: number): number {
+    let result: number = 1;
+
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+let fact: number = factorial(5);
+console.log(`Factorial = ${fact}`);
