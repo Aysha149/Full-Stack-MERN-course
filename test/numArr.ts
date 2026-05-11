@@ -7,5 +7,4 @@ function sumArray(arr: number[]): number {
 
     return result;
 }
-console.log(sumArray([10, 20, 30])); 
-console.log(sumArray([]));            
+console.log(sumArray([10, 20, 30]));           

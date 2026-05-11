@@ -1,11 +1,9 @@
 "use strict";
-function sumArray(numbers) {
+function sumArray(arr) {
     let result = 0;
-    for (let i = 0; i < numbers.length; i++) {
-        result += numbers[i];
+    for (let i = 0; i < arr.length; i++) {
+        result += arr[i];
     }
     return result;
 }
-let input = [10, 20, 30];
-let result = sumArray(input);
-console.log(result);
+console.log(sumArray([10, 20, 30]));
