@@ -1,9 +1,14 @@
-
+import Courses from "./courses.tsx";
 function App() {
 
-  return (
-    <h1>Courses app</h1>
-  )
+    return (
+    <div className="App">
+      <h1  className="m-3 text-center text-primary"> Courses</h1>
+      <Courses></Courses>
+      {/* <CourseList></CourseList> */}
+    </div>
+  );
+
 
 }
 
