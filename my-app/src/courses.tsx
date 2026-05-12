@@ -2,7 +2,7 @@
 function Courses() {
   return (
     <div>
-      <h2>Course List</h2>
+        <h2 style={{ color: 'blue' }}>Course List</h2>
       <ul>
         <li>Basic Computer Fundamentals</li>
         <li>MS Office</li>
