@@ -1,7 +1,6 @@
 // import Courses from "./courses.tsx";
-
 // import CourseList from "./courseList";
-import CoursesObjects from "./coursesObjects";
+// import CoursesObjects from "./coursesObjects";
 
 function App() {
 
@@ -11,7 +10,7 @@ function App() {
 
             {/* <Courses></Courses> */}
  {/* <CourseList></CourseList> */}
-            <CoursesObjects></CoursesObjects>
+            {/* <CoursesObjects></CoursesObjects> */}
 
  
     </div>
