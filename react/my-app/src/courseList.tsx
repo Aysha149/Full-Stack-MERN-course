@@ -9,7 +9,7 @@ function CoursesList() {
   ];
   return (
     <div className="p-3">
-      <h2 className="mb-4 text-secondary">Course List</h2>
+      <h2 className="mb-4 text-primary">Course List</h2>
       <ul className="list-group">
         {courses.map((course) => (
           <li className="list-group-item">{course}</li>

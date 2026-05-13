@@ -1,6 +1,7 @@
 // import Courses from "./courses.tsx";
 
-import CourseList from "./courseList";
+// import CourseList from "./courseList";
+import CoursesObjects from "./coursesObjects";
 
 function App() {
 
@@ -9,7 +10,10 @@ function App() {
               <h1 style={{ color: 'green' }}>Course </h1>
 
             {/* <Courses></Courses> */}
- <CourseList></CourseList>
+ {/* <CourseList></CourseList> */}
+            <CoursesObjects></CoursesObjects>
+
+ 
     </div>
   );
 
