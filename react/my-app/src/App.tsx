@@ -2,6 +2,11 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
+import ProductListB from "./ProductListB";
+
+// import ProductListA from "./ProductListA";
+
+// import ProductListA from "./ProductListA";
 function App() {
 
     return (
@@ -11,6 +16,10 @@ function App() {
             {/* <Courses></Courses> */}
  {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
+                  {/* <ProductListA></ProductListA> */}
+                        <ProductListB></ProductListB>
+
+
 
  
     </div>
