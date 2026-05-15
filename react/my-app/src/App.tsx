@@ -2,7 +2,9 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import ProductListB from "./ProductListB";
+import CoursesCards from "./CoursesCards";
+
+// import ProductListB from "./ProductListB";
 
 // import ProductListA from "./ProductListA";
 
@@ -17,7 +19,8 @@ function App() {
  {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
                   {/* <ProductListA></ProductListA> */}
-                        <ProductListB></ProductListB>
+                        {/* <ProductListB></ProductListB> */}
+                        <CoursesCards></CoursesCards>
 
 
 
