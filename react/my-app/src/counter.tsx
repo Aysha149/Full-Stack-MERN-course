@@ -6,7 +6,7 @@ function Counter() {
 
   return (
     <div>
-      <h1>Counter App</h1>
+      <h1 className=" text-primary">Counter App</h1>
       <h2 className="mt-4">Count: {count}</h2>
 
       <div className="mt-5">
