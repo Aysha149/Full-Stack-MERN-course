@@ -2,7 +2,9 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import Counter from "./counter";
+import StudentForm from "./studentForm";
+
+// import Counter from "./counter";
 
 // import CoursesCards from "./CoursesCards";
 
@@ -15,15 +17,15 @@ function App() {
 
     return (
     <div>
-              <h1 style={{ color: 'primary' }}>Counter </h1>
-
+        <h1 className="m-3 text-center text-primary mb-5">Registration Form</h1>
             {/* <Courses></Courses> */}
- {/* <CourseList></CourseList> */}
+            {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
-                  {/* <ProductListA></ProductListA> */}
-                        {/* <ProductListB></ProductListB> */}
-                        {/* <CoursesCards></CoursesCards> */}
-                              <Counter></Counter>
+            {/* <ProductListA></ProductListA> */}
+            {/* <ProductListB></ProductListB> */}
+            {/* <CoursesCards></CoursesCards> */}
+            {/* <Counter></Counter> */}
+            <StudentForm></StudentForm>
 
 
 
