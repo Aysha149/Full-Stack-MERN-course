@@ -2,7 +2,13 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import StudentForm from "./studentForm";
+import ProfileCard from "./ProfileCard";
+
+// import Greeting from "./greeting";
+
+// import ProductForm from "./ProductForm";
+
+// import StudentForm from "./studentForm";
 
 // import Counter from "./counter";
 
@@ -14,27 +20,34 @@ import StudentForm from "./studentForm";
 
 // import ProductListA from "./ProductListA";
 function App() {
-
     return (
-    <div>
-        <h1 className="m-3 text-center text-primary mb-5">Registration Form</h1>
-            {/* <Courses></Courses> */}
+        <>
+           <div>           
+              <h1 className="m-3 text-center text-primary mb-5">Greeting!</h1>
+             {/* <Courses></Courses> */}
             {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
             {/* <ProductListA></ProductListA> */}
             {/* <ProductListB></ProductListB> */}
             {/* <CoursesCards></CoursesCards> */}
             {/* <Counter></Counter> */}
-            <StudentForm></StudentForm>
+            {/* <StudentForm></StudentForm> */}
+            {/* <ProductForm></ProductForm> */}
+            {/* <Greeting name="John" greeting="Hello" /> */}
+                  <ProfileCard
+        name="Aysha"
+        title="Artificial Intelligence Engineer"
+        skills={["Java", "Python", "Pandas"]}
+      ></ProfileCard>
+      <ProfileCard
+        name="Maryam"
+        title="Data Science Engineer"
+        skills={["Python", "Pandas", "Power BI"]}
+      ></ProfileCard>
 
-
-
-
- 
-    </div>
-  );
-
-
+</div> 
+        </>
+    );
 }
 
 export default App
