@@ -2,7 +2,7 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import ProfileCard from "./ProfileCard";
+// import ProfileCard from "./ProfileCard";
 
 // import Greeting from "./greeting";
 
@@ -34,20 +34,22 @@ function App() {
             {/* <StudentForm></StudentForm> */}
             {/* <ProductForm></ProductForm> */}
             {/* <Greeting name="John" greeting="Hello" /> */}
-                  <ProfileCard
+                  {/* <ProfileCard */}
         name="Aysha"
         title="Artificial Intelligence Engineer"
         skills={["Java", "Python", "Pandas"]}
-      ></ProfileCard>
-      <ProfileCard
+      {/* ></ProfileCard> */}
+      {/* <ProfileCard */}
         name="Maryam"
         title="Data Science Engineer"
         skills={["Python", "Pandas", "Power BI"]}
-      ></ProfileCard>
-
-</div> 
+      {/* // ></ProfileCard> */}
+      </div>
         </>
     );
 }
+
+
+            
 
 export default App
