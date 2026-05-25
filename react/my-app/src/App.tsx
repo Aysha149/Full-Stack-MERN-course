@@ -2,7 +2,9 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import EmployeeDirectory from "./EmployeeDirectory";
+import ProductCatalogue from "./ProductCatalogue";
+
+// import EmployeeDirectory from "./EmployeeDirectory";
 
 
 
@@ -27,7 +29,6 @@ function App() {
     return (
         <>
            <div>           
-              <h1 className="m-3 text-center text-primary mb-5">Product Cards.</h1>
              {/* <Courses></Courses> */}
             {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
@@ -48,7 +49,8 @@ function App() {
         {/* title="Data Science Engineer" */}
         {/* skills={["Python", "Pandas", "Power BI"]} */}
       {/* // ></ProfileCard> */}
-            <EmployeeDirectory></EmployeeDirectory>
+            {/* <EmployeeDirectory></EmployeeDirectory> */}
+            <ProductCatalogue />
 
             
       </div>
