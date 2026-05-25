@@ -2,6 +2,10 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
+import EmployeeDirectory from "./EmployeeDirectory";
+
+
+
 // import ProfileCard from "./ProfileCard";
 
 // import Greeting from "./greeting";
@@ -23,7 +27,7 @@ function App() {
     return (
         <>
            <div>           
-              <h1 className="m-3 text-center text-primary mb-5">Greeting!</h1>
+              <h1 className="m-3 text-center text-primary mb-5">Product Cards.</h1>
              {/* <Courses></Courses> */}
             {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}
@@ -35,15 +39,18 @@ function App() {
             {/* <ProductForm></ProductForm> */}
             {/* <Greeting name="John" greeting="Hello" /> */}
                   {/* <ProfileCard */}
-        name="Aysha"
-        title="Artificial Intelligence Engineer"
-        skills={["Java", "Python", "Pandas"]}
+        {/* name="Aysha" */}
+        {/* title="Artificial Intelligence Engineer" */}
+        {/* skills={["Java", "Python", "Pandas"]} */}
       {/* ></ProfileCard> */}
       {/* <ProfileCard */}
-        name="Maryam"
-        title="Data Science Engineer"
-        skills={["Python", "Pandas", "Power BI"]}
+        {/* name="Maryam" */}
+        {/* title="Data Science Engineer" */}
+        {/* skills={["Python", "Pandas", "Power BI"]} */}
       {/* // ></ProfileCard> */}
+            <EmployeeDirectory></EmployeeDirectory>
+
+            
       </div>
         </>
     );
