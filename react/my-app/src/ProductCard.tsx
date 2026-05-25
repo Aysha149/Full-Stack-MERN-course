@@ -14,7 +14,7 @@ function ProductCard({
 }: ProductProps) {
 
   return (
-    <div className="card h-100 shadow-sm">
+    <div className="card h-100 shadow-sm"> 
 
       <img
         src={image}

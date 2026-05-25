@@ -28,7 +28,7 @@ import ProductCatalogue from "./ProductCatalogue";
 function App() {
     return (
         <>
-           <div className="bg-dark p-4">           
+           <div className="bg-black p-4">           
              {/* <Courses></Courses> */}
             {/* <CourseList></CourseList> */}
             {/* <CoursesObjects></CoursesObjects> */}

@@ -12,7 +12,7 @@ body {
     color: #8926df;
 }
 .card-text {
-    color: #c7bfbf;
+    color: #656262;
 }
 .card {
     border: px solid #1a1818;
@@ -27,7 +27,7 @@ button {
     border: 4px solid rgb(144, 140, 206);
     padding: 10px ;
     border-radius: 20px;
-    font-size: 20px;
+    font-size: 10px;
     box-shadow:
         0 0 5px rgb(182, 160, 212),
         0 0 15px rgba(123, 83, 158, 0.5);
