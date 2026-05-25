@@ -25,7 +25,7 @@ function ProductCard({
 
       <div className="card-body">
 
-        <h5 className="card-title">
+        <h5 className="c-title">
           {name}
         </h5>
 

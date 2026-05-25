@@ -47,7 +47,7 @@ function ProductCatalogue() {
   ]
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4  p-4">
 
             <h1 className="text-center mb-4 font fw-bold">Product Catalogue</h1>
 

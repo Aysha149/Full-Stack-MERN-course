@@ -1,21 +1,21 @@
 .card-body {
     padding: 15px;
-    background-color: #1d1c1c;
+    background-color: #170303;
     border-radius: 0 0 5px 5px;
 }
 body {
-    background-color: rgb(3, 11, 29);
+    background-color: rgb(223, 227, 236);
 }
-.card-title {
+.c-title {
     font-size: 1.25rem;
     font-weight: bold;
-    color: #e7e4e4;
+    color: #8926df;
 }
 .card-text {
-    color: #574e4e;
+    color: #c7bfbf;
 }
 .card {
-    border: px solid #d0cfcf;
+    border: px solid #1a1818;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(194, 108, 108, 0.1);
     transition: transform 0.2s;
