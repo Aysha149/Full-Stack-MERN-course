@@ -2,7 +2,8 @@
 // import CourseList from "./courseList";
 // import CoursesObjects from "./coursesObjects";
 
-import ProductCatalogue from "./ProductCatalogue";
+
+// import ProductCatalogue from "./ProductCatalogue";
 
 // import EmployeeDirectory from "./EmployeeDirectory";
 
@@ -50,10 +51,13 @@ function App() {
         {/* skills={["Python", "Pandas", "Power BI"]} */}
       {/* // ></ProfileCard> */}
             {/* <EmployeeDirectory></EmployeeDirectory> */}
-            <ProductCatalogue />
+            {/* <ProductCatalogue /> */}
+
+
 
             
       </div>
+      
         </>
     );
 }
