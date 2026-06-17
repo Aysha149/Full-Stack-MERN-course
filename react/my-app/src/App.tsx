@@ -58,6 +58,8 @@ function App() {
         <Link className="nav-link" to="/users">Users</Link>
         <Link className="nav-link" to="/posts">Posts</Link>
 
+      
+
 
 
       </div>
@@ -72,7 +74,6 @@ function App() {
     <Route path="/courses" element={<CoursesCards/>} />
     <Route path="/users" element={<UserList/>} />
     <Route path="/posts" element={<PostList/>} />
-
 
   </Routes>
 </main>
