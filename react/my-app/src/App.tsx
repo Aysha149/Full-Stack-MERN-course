@@ -7,6 +7,7 @@ import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
 import CoursesCards from "./CoursesCards";
+import UserList from "./UserList";
 
 
 
@@ -53,6 +54,8 @@ function App() {
         <Link className="nav-link" to="/about">About</Link>
         <Link className="nav-link" to="/contact">Contact</Link>
         <Link className="nav-link" to="/courses">Courses</Link>
+        <Link className="nav-link" to="/users">Users</Link>
+
 
       </div>
     </div>
@@ -64,7 +67,7 @@ function App() {
     <Route path="/about" element={<About/>} />
     <Route path="/contact" element={<Contact/>} />
     <Route path="/courses" element={<CoursesCards/>} />
-
+    <Route path="/users" element={<UserList/>} />
 
 
   </Routes>
