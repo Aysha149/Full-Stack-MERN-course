@@ -1,6 +1,4 @@
 function CoursesObjects() {
-  // static data
-  // real world apps - you call backend APIs (ExpressJS) and get the data
   let courses = [
     {
       id: 1,

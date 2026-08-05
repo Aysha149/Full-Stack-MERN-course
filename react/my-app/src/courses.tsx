@@ -1,15 +1,14 @@
-// TSX - TypeScript XML
 function Courses() {
   return (
-    <div>
-        <h2 style={{ color: 'blue' }}>Course List</h2>
-      <ul>
-        <li>Basic Computer Fundamentals</li>
-        <li>MS Office</li>
-        <li>Internet & Email Usage</li>
-        <li>Typing / Data Entry</li>
-        <li>Hardware & Networking</li>
-        <li>Digital Literacy</li>
+    <div className="Courses">
+      <h3 className="text-danger fw-bold">List of Courses</h3>
+      <ul className="list-group l">
+        <li className="list-group-item">Frontend Development</li>
+        <li className="list-group-item">Backend Development</li>
+        <li className="list-group-item">Data Engineering</li>
+        <li className="list-group-item"> Advanced Excel</li>
+        <li className="list-group-item">Web Design</li>
+        <li className="list-group-item">Python Programming</li>
       </ul>
     </div>
   );
