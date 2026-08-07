@@ -1,12 +1,12 @@
-import CoursesObjects from "./coursesObjects";
+import PostsList from "./PostsList";
 
 function App() {
   return (
     <div className="container">
-      <h1 className="text-primary text-center py-5">
-         Future Leaders Academy Courses!
+      <h1 className="text-primary  text-center py-5 ">
+         Future Leaders Academy.
       </h1>
-      <CoursesObjects />
+      <PostsList />
     </div>
   );
 }
