@@ -1,12 +1,11 @@
-import PostsList from "./PostsList";
-
+import RecipeList from "./RecipeList";
 function App() {
   return (
     <div className="container">
       <h1 className="text-primary  text-center py-5 ">
-         Future Leaders Academy.
+         Recipes List.
       </h1>
-      <PostsList />
+      <RecipeList />
     </div>
   );
 }
