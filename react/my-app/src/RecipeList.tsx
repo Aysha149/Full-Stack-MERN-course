@@ -5,7 +5,6 @@ type Recipe = {
   prepTimeMinutes: number;
   cookTimeMinutes: number;
   servings: number;
-  difficulty: string;
   cuisine: string;
   id: string;
 };
@@ -36,7 +35,6 @@ function RecipeList() {
             <th>Prep Time</th>
             <th>Cook Time</th>
             <th>Servings</th>
-            <th>Difficulty</th>
             <th>Cuisine</th>
           </tr>
         </thead>
@@ -48,7 +46,6 @@ function RecipeList() {
               <td>{recipe.prepTimeMinutes}</td>
               <td>{recipe.cookTimeMinutes}</td>
               <td>{recipe.servings}</td>
-              <td>{recipe.difficulty}</td>
               <td>{recipe.cuisine}</td>
             </tr>
           ))}
