@@ -1,11 +1,12 @@
-import RecipeList from "./RecipeList";
+import RecipeAdd from "./RecipeAdd";
+
 function App() {
   return (
     <div className="container">
-      <h1 className="text-danger  text-center py-5 ">
-         Recipes List.
+      <h1 className="text-danger  text-center  fw-bold py-5 ">
+         Recipes App.
       </h1>
-      <RecipeList />
+      <RecipeAdd />
     </div>
   );
 }
