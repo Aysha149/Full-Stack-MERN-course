@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 
 type Recipe = {
-  name: string;
-  prepTimeMinutes: number;
-  cookTimeMinutes: number;
-  servings: number;
-  cuisine: string;
   id: string;
+  name: string;
+  PrepTimeMinutes: number;
+  CookTimeMinutes: number;
+  Servings: number;
+  Cuisine: string;
+  Difficulty: string;
 };
 
 function RecipeList() {
@@ -30,12 +31,13 @@ function RecipeList() {
       <table className="table table-bordered table-striped table-hover">
         <thead className="table-danger">
           <tr>
-            <th>Id</th>
-            <th>Name</th>
+            <th>id</th>
+            <th>name</th>
             <th>Prep Time</th>
             <th>Cook Time</th>
             <th>Servings</th>
             <th>Cuisine</th>
+            <th>Difficulty</th>
           </tr>
         </thead>
         <tbody>
@@ -43,10 +45,13 @@ function RecipeList() {
             <tr key={recipe.id}>
               <td>{recipe.id}</td>
               <td>{recipe.name}</td>
-              <td>{recipe.prepTimeMinutes}</td>
-              <td>{recipe.cookTimeMinutes}</td>
-              <td>{recipe.servings}</td>
-              <td>{recipe.cuisine}</td>
+              <td>{recipe.PrepTimeMinutes}</td>
+              <td>{recipe.CookTimeMinutes}</td>
+              <td>{recipe.Servings}</td>
+              <td>{recipe.Cuisine}</td>
+              <td>{recipe.Difficulty}</td>
+
+
             </tr>
           ))}
         </tbody>

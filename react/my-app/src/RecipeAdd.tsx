@@ -10,6 +10,8 @@ function RecipeAdd() {
   const [Servings, setServings] = useState<string>("");
   const [Cuisine, setCuisine] = useState<string>("");
   const [Ratings, setRatings] = useState<string>("");
+  const [Difficulty, setDifficulty] = useState<string>("");
+
 
 
   const addRecipe = async () => {
@@ -21,6 +23,7 @@ function RecipeAdd() {
       Servings,
       Cuisine,
       Ratings,
+      Difficulty
     };
 
     console.log(recipe);
@@ -127,6 +130,21 @@ function RecipeAdd() {
             onChange={(event) => setRatings(event.target.value)}
           />
         </div>
+
+          <div className="mb-3">
+          <label htmlFor="DifficultyTextBox" className="form-label text-danger">
+            Difficulty:{" "}
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter Difficulty Level"
+            id="DifficultyTextBox"
+            value={Difficulty}
+            onChange={(event) => setDifficulty(event.target.value)}
+          />
+        </div>
+
 
 
 

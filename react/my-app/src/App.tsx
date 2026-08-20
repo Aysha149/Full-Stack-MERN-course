@@ -1,4 +1,4 @@
-import RecipeAdd from "./RecipeAdd";
+import RecipeList from "./RecipeList";
 
 function App() {
   return (
@@ -6,7 +6,7 @@ function App() {
       <h1 className="text-danger  text-center  fw-bold py-5 ">
          Recipes App.
       </h1>
-      <RecipeAdd />
+      <RecipeList />
     </div>
   );
 }
