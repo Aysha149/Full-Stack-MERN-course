@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 type Recipe = {
   id: string;
@@ -28,6 +29,9 @@ function RecipeList() {
 
   return (
     <div className="p-3">
+            <Link className="btn btn-primary mb-4" to="/recipes-add">
+        Add a New Recipe
+      </Link>
       <table className="table table-bordered table-striped table-hover">
         <thead className="table-danger">
           <tr>

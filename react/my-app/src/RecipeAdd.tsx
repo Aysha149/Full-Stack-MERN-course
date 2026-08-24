@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const API_URL = "https://6a7dddb8f8b2ed99ca4eec0e.mockapi.io/Recipes"
 function RecipeAdd() {
@@ -12,9 +13,10 @@ function RecipeAdd() {
   const [Ratings, setRatings] = useState<string>("");
   const [Difficulty, setDifficulty] = useState<string>("");
 
+    const navigate = useNavigate();
 
 
-  const addRecipe = async () => {
+   const addRecipe = async () => {
     // JavaScript
     const recipe = {
       name,
@@ -35,8 +37,8 @@ function RecipeAdd() {
         },
         body: JSON.stringify(recipe)
     });
+        navigate("/recipes");
 
-    // Call API
   };
 
   return (
