@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom";
 
 const API_URL = "https://6a7dddb8f8b2ed99ca4eec0e.mockapi.io/Recipes"
 function RecipeAdd() {
-  // Create provision to store data entered by the user
   
   const [name, setName] = useState<string>("");
   const [PrepTimeMinutes, setPrepTimeMinutes] = useState<string>("");

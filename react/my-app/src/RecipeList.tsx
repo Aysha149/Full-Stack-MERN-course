@@ -42,6 +42,7 @@ function RecipeList() {
             <th>Servings</th>
             <th>Cuisine</th>
             <th>Difficulty</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
@@ -54,6 +55,20 @@ function RecipeList() {
               <td>{recipe.Servings}</td>
               <td>{recipe.Cuisine}</td>
               <td>{recipe.Difficulty}</td>
+              <td>
+                <Link
+                  to={`/recipes-edit/${recipe.id}`}
+                  className="btn btn-success me-2"
+                >
+                  Edit
+                </Link>
+                <Link
+                  to={`/recipes-edit/${recipe.id}`}
+                  className="btn btn-danger me-2"
+                >
+                  Delete
+                </Link>
+              </td>
 
 
             </tr>
