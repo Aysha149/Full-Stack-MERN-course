@@ -29,7 +29,6 @@ function RecipeEdit() {
     fetchRecipe();
   }, [params.id])
 
-  // hits the API and adds the Recipe in Backend
   const editRecipe = async () => {
     // JavaScript
     const recipe = {
@@ -144,7 +143,7 @@ function RecipeEdit() {
         
         <div className="mt-5">
           <button
-            className="btn btn-warning w-100"
+            className="btn btn-success w-100"
             onClick={() => editRecipe()}
           >
             Edit Recipe
