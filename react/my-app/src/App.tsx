@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Link, Route, Routes } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
-import RecipeList from "./RecipeList";
+ import RecipeList from "./RecipeList";
 import RecipeAdd from "./RecipeAdd";
 import RecipeEdit from "./RecipeEdit";
+import RecipeSearch from "./RecipeSearch"; 
 
 function App() {
   return (
@@ -30,12 +31,13 @@ function App() {
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link fw-bold" to="/recipes">
+              <Link className="nav-link fw-bold" to="/recipes-search">
                 Recipes
               </Link>
             </li>
 
-          </ul>
+        </ul>
+
         </div>
       </nav>
       <div className="container">
@@ -43,9 +45,11 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
-            <Route path="/recipes" element={<RecipeList />} />
+            <Route path="/recipes" element={<RecipeList  />} />
+             <Route path="/recipes-search" element={<RecipeSearch />} /> 
             <Route path="/recipes-add" element={<RecipeAdd />} />
             <Route path="/recipes-edit/:id" element={<RecipeEdit />} />
+
             
           </Routes>
         </main>
