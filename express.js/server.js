@@ -42,15 +42,3 @@ if (!mongoUrl) {
   throw new Error("MONGO_URL is missing. Add it to the .env file.");
 }
 
-mongoose
-  .connect(mongoUrl)
-  .then(() => {
-    console.log("Express app connected to MongoDB");
-    app.listen(3000, () => {
-      console.log("Express App running on port 3000");
-    });
-  })
-  .catch((err) => {
-    console.error("MongoDB connection failed:", err.message);
-    process.exitCode = 1;
-  });
