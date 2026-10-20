@@ -12,33 +12,57 @@ mongoose
   .then(() => console.log("Express app connected to MongoDB"))
   .catch((err) => console.error(err));
 
+  app.listen(3000, () => {
+  console.log("Express App running on port 3000");
+});
+
+
+
 const Leader = require("./models/Leader");
 
 app.post("/leaders", async (req, res) => {
-  const leader = new Leader(req.body);
-  const savedLeader = await leader.save();
+  try {
+    const leader = new Leader(req.body);
+    const savedLeader = await leader.save();
 
-  res.status(201).json(savedLeader);
-});
-
- app.get("/leaders", async (req, res) => {
-  const leaders = await Leader.find();
-   res.json(leaders);
-});
-
-app.use((err, req, res, next) => {
-  if (err.type === "entity.parse.failed") {
-    return res.status(400).json({
-      message: "Invalid JSON in request body. Send a valid JSON object.",
+    res.status(201).json({
+      message: "Leader created successfully",
+      data: savedLeader,
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: "Failed to create leader",
+      error: error.message,
     });
   }
-
-  next(err);
 });
 
-const mongoUrl = process.env.MONGO_URL;
+app.get("/leaders", async (req, res) => {
+  try {
+    const leaders = await Leader.find();
 
-if (!mongoUrl) {
-  throw new Error("MONGO_URL is missing. Add it to the .env file.");
-}
+    res.status(200).json(leaders);
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to fetch leaders",
+    });
+  }
+});
 
+app.get("/leaders/:id", async (req, res) => {
+  try {
+    const leader = await Leader.findById(req.params.id);
+
+    if (!leader) {
+      return res.status(404).json({
+        message: "Leader  not found",
+      });
+    }
+
+    res.status(200).json(leader);
+  } catch (error) {
+    res.status(400).json({
+      message: "Invalid Leader ID",
+    });
+  }
+});
