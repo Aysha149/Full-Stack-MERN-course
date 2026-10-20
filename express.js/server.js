@@ -1,18 +1,16 @@
 const dns = require("node:dns");
 dns.setServers(["8.8.8.8", "1.1.1.1"]);
-const express = require("express")
-const mongoose = require("mongoose")
+require("dotenv").config();
+const express = require("express");
+const mongoose = require("mongoose");
 
 const app = express();
 app.use(express.json())
 
-mongoose.connect(
-"mongodb+srv://ayshaifra149_db_user:aysha09@cluster0.vditcxk.mongodb.net/CollegeDB"
-
-)
-
-.then(()=> console.log("Express app connected to MongoDB"))
-.catch((err) => console.error(err))
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => console.log("Express app connected to MongoDB"))
+  .catch((err) => console.error(err));
 
 const Leader = require("./models/Leader");
 
@@ -38,6 +36,21 @@ app.use((err, req, res, next) => {
   next(err);
 });
 
-app.listen(3000, () => {
-  console.log("Express App running on port 3000");
-});
+const mongoUrl = process.env.MONGO_URL;
+
+if (!mongoUrl) {
+  throw new Error("MONGO_URL is missing. Add it to the .env file.");
+}
+
+mongoose
+  .connect(mongoUrl)
+  .then(() => {
+    console.log("Express app connected to MongoDB");
+    app.listen(3000, () => {
+      console.log("Express App running on port 3000");
+    });
+  })
+  .catch((err) => {
+    console.error("MongoDB connection failed:", err.message);
+    process.exitCode = 1;
+  });
