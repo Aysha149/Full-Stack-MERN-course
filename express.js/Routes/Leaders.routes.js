@@ -1,9 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Leader = require("../models/Leader");
+const validateLeader = require("../middlewares/validateLeader");
 
 
-router.post("/", async (req, res) => {
+router.post("/", validateLeader, async (req, res) => {
   try {
     const leader = new Leader(req.body);
     const savedLeader = await leader.save();

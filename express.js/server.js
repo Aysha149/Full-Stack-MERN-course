@@ -16,6 +16,12 @@ mongoose
   console.log("Express App running on port 3000");
 });
 
+const logger = (req, res, next) => {
+  console.log("Request recieved:", req.method, req.url, req.body);
+  next();
+}
+
+app.use(logger);
 
 
 const LeaderRoutes = require("./Routes/Leaders.routes");
