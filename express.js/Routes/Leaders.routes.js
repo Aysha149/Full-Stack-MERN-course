@@ -23,7 +23,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-        const query = req.query;
+    const query = req.query;
 
     let filter = {};
 
