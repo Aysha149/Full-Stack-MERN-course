@@ -72,25 +72,29 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+
+router.delete("/:id", async (req, res) => {
   try {
-    const updatedLeader = await Leader.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true },
-    );
+    const deletedLeader = await Leader.findByIdAndDelete(req.params.id);
+
+    if (!deletedLeader) {
+      return res.status(404).json({
+        message: "Leader not found",
+      });
+    }
 
     res.status(200).json({
-      message: "Leader updated successfully",
-      data: updatedLeader,
+      message: "Leader deleted successfully",
+      data: deletedLeader,
     });
   } catch (error) {
     res.status(400).json({
-      message: "Failed to update Leader",
+      message: "Failed to delete Leader",
       error: error.message,
     });
   }
 });
+
 
 module.exports = router;
 
