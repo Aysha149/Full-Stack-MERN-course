@@ -4,7 +4,7 @@ const Leader = require("../models/Leader");
 const validateLeader = require("../middlewares/validateLeader");
 
 
-router.post("/", validateLeader, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const leader = new Leader(req.body);
     const savedLeader = await leader.save();
@@ -15,7 +15,28 @@ router.post("/", validateLeader, async (req, res) => {
     });
   } catch (error) {
     res.status(400).json({
-      message: "Failed to create Leader",
+      message: "Failed to create leader",
+      error: error.message,
+    });
+  }
+});
+
+router.get("/", async (req, res) => {
+  try {
+        const query = req.query;
+
+    let filter = {};
+
+    if (query.name) {
+      filter.name = query.name;
+    }
+
+    console.log(filter);
+
+    const leaders = await Leader.find(filter);
+  } catch (error) {
+    res.status(500).json({
+      message: "Failed to fetch Leaders",
       error: error.message,
     });
   }
@@ -29,7 +50,7 @@ router.get("/", async (req, res) => {
   } catch (error) {
     res.status(500).json({
       message: "Failed to fetch Leaders",
-    });
+      error: error.message,    });
   }
 });
 
