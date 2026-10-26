@@ -29,14 +29,15 @@ router.get("/", async (req, res) => {
     let filter = {};
 
     if (query.name) {
-      filter.name = query.name;
+      filter.name = { $regex: query.name, $options: "i" };
     }
 
+        
     console.log(filter);
 
-    const Leaders = await Leader.find(filter);
+        const Leaders = await Leader.find(filter).sort({ name: 1 });
 
-    res.status(200).json(Leaders);
+      res.status(200).json(Leaders);
   } 
 catch (error) {
     res.status(500).json({
