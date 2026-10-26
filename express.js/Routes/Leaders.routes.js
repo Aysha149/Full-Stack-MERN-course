@@ -23,6 +23,7 @@ router.post("/", async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
+    const leaders = await Leader.find();
     const query = req.query;
 
     let filter = {};
@@ -33,10 +34,13 @@ router.get("/", async (req, res) => {
 
     console.log(filter);
 
-    const leaders = await Leader.find(filter);
-  } catch (error) {
+    const Leaders = await Leader.find(filter);
+
+    res.status(200).json(Leaders);
+  } 
+catch (error) {
     res.status(500).json({
-      message: "Failed to fetch Leaders",
+      message: "Failed to fetch leaders",
       error: error.message,
     });
   }
@@ -49,7 +53,7 @@ router.get("/", async (req, res) => {
     res.status(200).json(leaders);
   } catch (error) {
     res.status(500).json({
-      message: "Failed to fetch Leaders",
+      message: "Failed to fetch leaders",
       error: error.message,    });
   }
 });
