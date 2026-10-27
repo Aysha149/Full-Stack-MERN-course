@@ -23,7 +23,8 @@ const logger = (req, res, next) => {
 
 app.use(logger);
 
-
-const LeaderRoutes = require("./Routes/Leaders.routes");
-app.use("/leaders", LeaderRoutes);
+// const LeaderRoutes = require("./routes/leaders.routes");
+// app.use("/leaders",  LeaderRoutes)
+const RecipeRoutes = require("./Routes/recipes.routes");
+app.use("/recipes", RecipeRoutes);
 
