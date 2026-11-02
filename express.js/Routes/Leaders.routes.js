@@ -26,18 +26,33 @@ router.get("/", async (req, res) => {
     const leaders = await Leader.find();
     const query = req.query;
 
+    const pageSize = query.limit || 10; 
+    const skipRecords = query.skip || 0;
+
     let filter = {};
 
     if (query.name) {
       filter.name = { $regex: query.name, $options: "i" };
     }
 
-        
-    console.log(filter);
+    
+    const totalLeaders = await Leader.countDocuments();
+        const Leaders = await Leader.find(filter)
+      .limit(pageSize)
+      .skip(skipRecords)
+      .sort({ name: 1 });
 
-        const Leaders = await Leader.find(filter).sort({ name: 1 });
 
-      res.status(200).json(Leaders);
+    // const Leaders = await Leader.find(filter).sort({ name: 1 });
+
+
+    // res.status(200).json(Leaders);
+        res.status(200).json({
+      leaders: Leaders,
+      total: totalLeaders,
+      skip: skipRecords,
+      limit: pageSize,
+    });
   } 
 catch (error) {
     res.status(500).json({
