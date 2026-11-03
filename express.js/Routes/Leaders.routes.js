@@ -62,17 +62,17 @@ catch (error) {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const leaders = await Leader.find();
+// router.get("/", async (req, res) => {
+//   try {
+//     const leaders = await Leader.find();
 
-    res.status(200).json(leaders);
-  } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch leaders",
-      error: error.message,    });
-  }
-});
+//     res.status(200).json(leaders);
+//   } catch (error) {
+//     res.status(500).json({
+//       message: "Failed to fetch leaders",
+//       error: error.message,    });
+//   }
+// });
 
 router.get("/:id", async (req, res) => {
   try {
