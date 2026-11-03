@@ -30,14 +30,13 @@ const LeadersList: Leader[] = data.leaders;
       <ul className="list-group">
         {Leaders.map((Leader) => (
           <li key={Leader._id} className="list-group-item">
-            {/* Display Leader details. */}
             <h4 className="text-warning">{Leader.name}</h4>
 
-            <p className="text-muted mb-1">Email: {Leader.email}</p>
+            <p className="text-primary mb-1">Email: {Leader.email}</p>
 
-            <p className="text-muted mb-1">Grade: {Leader.grade}</p>
+            <p className="text-secondary mb-1">Grade: {Leader.grade}</p>
 
-            <p className="text-success mb-0">
+            <p className="text-danger mb-0">
               Post: {Leader.post}
             </p>
           </li>
