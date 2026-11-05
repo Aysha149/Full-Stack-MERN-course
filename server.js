@@ -18,10 +18,14 @@ mongoose
   .then(() => console.log("Express app connected to MongoDB"))
   .catch((err) => console.error(err));
 
-  app.listen(3000, () => {
-  console.log("Express App running on port 3000");
-});
+//   app.listen(3000, () => {
+//   console.log("Express App running on port 3000");
+// });
+ const PORT = process.env.PORT || 3000;
 
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 const logger = (req, res, next) => {
   console.log("Request recieved:", req.method, req.url, req.body);
   next();
