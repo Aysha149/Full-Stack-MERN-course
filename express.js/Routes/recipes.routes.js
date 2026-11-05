@@ -23,7 +23,7 @@ router.post("/", validateRecipe, async (req, res) => {
 
 router.get("/", async (req, res) => {
   try {
-    const Recipes = await Recipe.find();
+    // const Recipes = await Recipe.find();
     const query = req.query;
 
     let filter = {};
@@ -46,17 +46,17 @@ catch (error) {
   }
 });
 
-router.get("/", async (req, res) => {
-  try {
-    const Recipe = await Recipe.find();
+// router.get("/", async (req, res) => {
+//   try {
+//     const Recipe = await Recipe.find();
 
-    res.status(200).json(Recipe);
-  } catch (error) {
-    res.status(500).json({
-      message: "Failed to fetch Recipe",
-      error: error.message,    });
-  }
-});
+//     res.status(200).json(Recipe);
+//   } catch (error) {
+//     res.status(500).json({
+//       message: "Failed to fetch Recipe",
+//       error: error.message,    });
+//   }
+// });
 
 router.get("/:id", async (req, res) => {
   try {

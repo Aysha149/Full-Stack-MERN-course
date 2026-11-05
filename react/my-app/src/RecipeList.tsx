@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 type Recipe = {
-  id: string;
+  _id: string;
   name: string;
-  PrepTimeMinutes: number;
-  CookTimeMinutes: number;
-  Servings: number;
-  Cuisine: string;
-  Difficulty: string;
+  cuisine: string;
+  ingredients: string;
+  prepTimeMinutes: number;
+  cookTimeMinutes: number;
 };
 
 function RecipeList() {
@@ -47,36 +46,34 @@ function RecipeList() {
       <table className="table table-bordered table-striped table-hover">
         <thead className="table-danger">
           <tr>
-            <th>id</th>
+            <th>_id</th>
             <th>name</th>
+            <th>cuisine</th>
+            <th>Ingredients</th>
             <th>Prep Time</th>
             <th>Cook Time</th>
-            <th>Servings</th>
-            <th>Cuisine</th>
-            <th>Difficulty</th>
             <th>Actions</th>
           </tr>
         </thead>
         <tbody>
           {recipes.map((recipe) => (
-            <tr key={recipe.id}>
-              <td>{recipe.id}</td>
+            <tr key={recipe._id}>
+              <td>{recipe._id}</td>
               <td>{recipe.name}</td>
-              <td>{recipe.PrepTimeMinutes}</td>
-              <td>{recipe.CookTimeMinutes}</td>
-              <td>{recipe.Servings}</td>
-              <td>{recipe.Cuisine}</td>
-              <td>{recipe.Difficulty}</td>
+              <td>{recipe.cuisine}</td>
+              <td>{recipe.ingredients}</td>
+              <td>{recipe.prepTimeMinutes}</td>
+              <td>{recipe.cookTimeMinutes}</td>
               <td>
                 <Link
-                  to={`/recipes-edit/${recipe.id}`}
+                  to={`/recipes-edit/${recipe._id}`}
                   className="btn btn-warning me-2"
                 >
                   Edit
                 </Link>
                 <button
                   className="btn btn-danger me-2"
-                  onClick={() => deleteRecipe(recipe.id)}
+                  onClick={() => deleteRecipe(recipe._id)}
                 >
                   Delete
                 </button>

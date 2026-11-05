@@ -1,12 +1,12 @@
 import { useState } from "react";
 
 type Recipe = {
-  id: number;
+  _id: string;
   name: string;
-  image: string;
-  servings: number;
-  difficulty: string;
-  rating: number;
+  cuisine: string;
+  ingredients: string;
+  prepTimeMinutes: number;
+  cookTimeMinutes: number;
 };
 
 const RecipeSearch = () => {
@@ -14,12 +14,12 @@ const RecipeSearch = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const fetchRecipes = async () => {
-    const apiUrl = `https://dummyjson.com/recipes/search?q=${searchTerm}`;
+    const apiUrl = `http://localhost:3000/recipes?name=${searchTerm}`;
     console.log(apiUrl);
     const response = await fetch(apiUrl);
     const data = await response.json();
     console.log(data);
-    setRecipes(data.recipes);
+    setRecipes(data);
   };
 
   return (
@@ -42,18 +42,19 @@ const RecipeSearch = () => {
 
       <div className="row">
         {recipes.map((recipe) => (
-          <div className="col-md-3 mb-3" key={recipe.id}>
+          <div className="col-md-3 mb-3" key={recipe._id}>
             <div className="card h-100">
-              <img
+              {/* <img
                 src={recipe.image}
                 className="card-img-top"
                 alt={recipe.name}
-              />
+              /> */}
               <div className="card-body">
                 <h5 className="card-title">{recipe.name}</h5>
-                <p className="card-text">Servings: {recipe.servings}</p>
-                <p className="card-text">Difficulty: {recipe.difficulty}</p>
-                <p className="card-text">Rating: {recipe.rating}</p>
+                <p className="card-text">Cuisine: {recipe.cuisine}</p>
+                <p className="card-text">Ingredients: {recipe.ingredients}</p>
+                <p className="card-text">Preparation Time: {recipe.prepTimeMinutes} minutes</p>
+                <p className="card-text">Cooking Time: {recipe.cookTimeMinutes} minutes</p>
 
                 <a href="#" className="btn btn-primary">
                   View Details
