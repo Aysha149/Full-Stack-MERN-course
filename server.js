@@ -37,5 +37,5 @@ app.use(logger);
 
 const LeaderRoutes = require("./Routes/Leaders.routes");
 app.use("/leaders", LeaderRoutes);
-const RecipeRoutes = require("./Routes/recipes.routes");
-app.use("/recipes", RecipeRoutes);
+// const RecipeRoutes = require("./Routes/recipes.routes");
+// app.use("/recipes", RecipeRoutes);
