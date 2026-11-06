@@ -1,0 +1,31 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Img Src</title>
+    <style>
+        button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+    <script>
+      function bulbToggle() {
+        let bulbImg = document.getElementById("bulbImg");
+        if (bulbImg.src.includes("img/bulb-on.png")) {
+          bulbImg.src = "img/bulb-off.png";
+        } else {
+          bulbImg.src = "img/bulb-on.png";
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h2>Bulb On/Off</h2>
+    <img id="bulbImg" src="img/bulb-off.png" alt="Bulb" width="200"  />
+    <br /><br />
+    <button onclick="bulbToggle()">On/Off</button>
+  </body>
+</html>
