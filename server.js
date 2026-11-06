@@ -10,7 +10,8 @@ const app = express();
 app.use(cors());
 app.use(
   express.json({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://express-api-egw6.onrender.com",
   }),
 );
 
@@ -34,7 +35,7 @@ const logger = (req, res, next) => {
 
 app.use(logger);
 
-//  const LeaderRoutes = require("./Routes/Leaders.routes");
-//  app.use("/leaders",  LeaderRoutes)
+const LeaderRoutes = require("./Routes/Leaders.routes");
+app.use("/leaders", LeaderRoutes);
 const RecipeRoutes = require("./Routes/recipes.routes");
 app.use("/recipes", RecipeRoutes);
