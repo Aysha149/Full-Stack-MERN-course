@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Img src</title>
+    <style>
+        button {
+         background-color:black; 
+         color: white;  
+        }
+    </style>
+    <script>
+        function bulbon() {
+            let bulbImg=document.getElementById("bulbImg");
+            bulbImg.src="img/bulb-on.png";
+        }
+        function bulboff() { 
+            let bulbImg=document.getElementById("bulbImg");
+            bulbImg.src="img/bulb-off.png";
+        }
+    </script>
+</head>
+<body>
+    <h2>Bulb on/off</h2>
+    <img id="bulbImg" src="img/bulb-off.png" alt="Bulb" width="200px" />
+
+    <br /><br />
+    
+    <button onclick="bulbon()">On</button>
+    <button onclick="bulboff()">Off</button>
+    
+</body>
+</html>
