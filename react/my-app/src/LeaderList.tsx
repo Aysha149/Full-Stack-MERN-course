@@ -13,7 +13,7 @@ function LeaderList() {
   const [Leaders, setLeaders] = useState<Leader[]>([]);
 
   const fetchLeaders = async () => {
-    const response = await fetch(" https://express-api-egw6.onrender.com");
+    const response = await fetch(" https://express-api-egw6.onrender.com/leaders");
     const data = await response.json();
 const LeadersList: Leader[] = data.leaders;
     setLeaders(LeadersList);

@@ -1,16 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_URL = "https://6a7dddb8f8b2ed99ca4eec0e.mockapi.io/Recipes"
+const API_URL = "https://express-api-egw6.onrender.com/recipes";
 function RecipeAdd() {
   
   const [name, setName] = useState<string>("");
-  const [PrepTimeMinutes, setPrepTimeMinutes] = useState<string>("");
-  const [CookTimeMinutes, setCookTimeMinutes] = useState<string>("");
-  const [Servings, setServings] = useState<string>("");
-  const [Cuisine, setCuisine] = useState<string>("");
-  const [Ratings, setRatings] = useState<string>("");
-  const [Difficulty, setDifficulty] = useState<string>("");
+  const [cuisine, setcuisine] = useState<string>("");
+  const [ingredients, setingredients] = useState<string>("");
+  const [prepTimeMinutes, setprepTimeMinutes] = useState<string>("");
+  const [cookTimeMinutes, setcookTimeMinutes] = useState<string>("");
+  const [image, setimage] = useState<string>("");
 
     const navigate = useNavigate();
 
@@ -19,12 +18,11 @@ function RecipeAdd() {
     // JavaScript
     const recipe = {
       name,
-      PrepTimeMinutes,
-      CookTimeMinutes,
-      Servings,
-      Cuisine,
-      Ratings,
-      Difficulty
+      cuisine,
+      ingredients,
+      prepTimeMinutes,
+      cookTimeMinutes,
+      image,
     };
 
     console.log(recipe);
@@ -62,18 +60,47 @@ function RecipeAdd() {
         </div>
 
         <div className="mb-3">
+          <label htmlFor="cuisineTextBox" className="form-label text-danger">
+            Cuisine:{" "}
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter Cuisine Type"
+            id="cuisineTextBox"
+            value={cuisine}
+            onChange={(event) => setcuisine(event.target.value)}
+          />
+        </div>
+
+        <div className="mb-3">
+          <label htmlFor="ingredientsTextBox" className="form-label text-danger">
+            Ingredients:{" "}
+          </label>
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Enter Ingredients"
+            id="ingredientsTextBox"
+            value={ingredients}
+            onChange={(event) => setingredients(event.target.value)}
+          />
+        </div>
+
+        <div className="mb-3">
           <label htmlFor="prepTimeTextBox" className="form-label text-danger">
-            Prep Time:{" "}
+            Preparation Time:{" "}
           </label>
           <input
             type="text"
             className="form-control"
             placeholder="Enter Preparation Time in Minutes"
             id="prepTimeTextBox"
-            value={PrepTimeMinutes}
-            onChange={(event) => setPrepTimeMinutes(event.target.value)}
+            value={prepTimeMinutes}
+            onChange={(event) => setprepTimeMinutes(event.target.value)}
           />
         </div>
+
 
         <div className="mb-3">
           <label htmlFor="cookTimeTextBox" className="form-label text-danger">
@@ -84,70 +111,28 @@ function RecipeAdd() {
             className="form-control"
             placeholder="Enter Cooking Time in Minutes"
             id="cookTimeTextBox"
-            value={CookTimeMinutes}
-            onChange={(event) => setCookTimeMinutes(event.target.value)}
+            value={cookTimeMinutes}
+            onChange={(event) => setcookTimeMinutes(event.target.value)}
           />
         </div>
 
         <div className="mb-3">
-          <label htmlFor="servingsTextBox" className="form-label text-danger">
-            Servings:{" "}
+          <label htmlFor="imageTextBox" className="form-label text-danger">
+            Image URL:{" "}
           </label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Number of Servings"
-            id="servingsTextBox"
-            value={Servings}
-            onChange={(event) => setServings(event.target.value)}
+            placeholder="Enter Image URL"
+            id="imageTextBox"
+            value={image}
+            onChange={(event) => setimage(event.target.value)}
           />
         </div>
 
+        
 
-        <div className="mb-3">
-          <label htmlFor="cuisineTextBox" className="form-label text-danger">
-            Cuisine:{" "}
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Cuisine Type"
-            id="cuisineTextBox"
-            value={Cuisine}
-            onChange={(event) => setCuisine(event.target.value)}
-          />
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="RatingsTextBox" className="form-label text-danger">
-            Ratings:{" "}
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Ratings (1-5)"
-            id="RatingsTextBox"
-            value={Ratings}
-            onChange={(event) => setRatings(event.target.value)}
-          />
-        </div>
-
-          <div className="mb-3">
-          <label htmlFor="DifficultyTextBox" className="form-label text-danger">
-            Difficulty:{" "}
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Difficulty Level"
-            id="DifficultyTextBox"
-            value={Difficulty}
-            onChange={(event) => setDifficulty(event.target.value)}
-          />
-        </div>
-
-
-
+          
 
         <div className="mt-5">
           <button className="btn btn-primary w-100" onClick={() => addRecipe()}>
