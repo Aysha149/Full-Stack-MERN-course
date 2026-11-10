@@ -8,6 +8,7 @@ type Recipe = {
   ingredients: string;
   prepTimeMinutes: number;
   cookTimeMinutes: number;
+  image?: string;
 };
 
 function RecipeList() {
@@ -15,19 +16,19 @@ function RecipeList() {
 
   const fetchRecipes = async () => {
     const response = await fetch(
-      "https://6a7dddb8f8b2ed99ca4eec0e.mockapi.io/Recipes",
+      "https://express-api-egw6.onrender.com/recipes",
     );
     const data = await response.json();
     setRecipes(data);
   };
 
-    const deleteRecipe = async (id: string) => {
+  const deleteRecipe = async (id: string) => {
     const isDeleteConfirmed = window.confirm(
       "Are you sure you want to delete the selected Recipe?",
     );
 
     if (isDeleteConfirmed) {
-      const API_URL = `https://67a75555203008941f674e2f.mockapi.io/recipes/${id}`;
+      const API_URL = `https://express-api-egw6.onrender.com/recipes/${id}`;
       await fetch(API_URL, { method: "DELETE" });
       fetchRecipes();
     }
@@ -40,7 +41,7 @@ function RecipeList() {
 
   return (
     <div className="p-3">
-            <Link className="btn btn-primary mb-4" to="/recipes-add">
+      <Link className="btn btn-primary mb-4" to="/recipes-add">
         Add a New Recipe
       </Link>
       <table className="table table-bordered table-striped table-hover">
@@ -52,6 +53,7 @@ function RecipeList() {
             <th>Ingredients</th>
             <th>Prep Time</th>
             <th>Cook Time</th>
+            <th>image</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -64,6 +66,9 @@ function RecipeList() {
               <td>{recipe.ingredients}</td>
               <td>{recipe.prepTimeMinutes}</td>
               <td>{recipe.cookTimeMinutes}</td>
+              <td>
+                <img src={recipe.image} alt={recipe.name} width="100" />
+              </td>
               <td>
                 <Link
                   to={`/recipes-edit/${recipe._id}`}
@@ -78,8 +83,6 @@ function RecipeList() {
                   Delete
                 </button>
               </td>
-
-
             </tr>
           ))}
         </tbody>
