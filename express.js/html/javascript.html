@@ -1,0 +1,50 @@
+html<!DOCTYPE >
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        h1{
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        p{
+            font-style: oblique;
+            color: blueviolet;
+        }
+        button{
+            background-color:bisque;
+        }
+    </style>
+    <script>
+        function changeHeadingcolor() {
+            let h=document.getElementById("Heading");
+            h.style.color="brown";
+            h.style.textAlign="center";
+            h.style.textShadow="3px 3px 5px blue";
+        }
+        
+        function changepara() {
+            let p=document.getElementById("Para");
+            p.style.color="brown";
+            p.style.border="2px solid gray";
+            p.style.backgroundColor="beige"
+            p.style.borderRadius="8px"
+
+
+        }
+        
+    </script>
+</head>
+<body>
+    <h1 id="Heading">java script</h1>
+    <p id="Para">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste impedit animi non fugit recusandae ducimus optio quis sed explicabo, molestiae quisquam maiores id? Ut numquam ipsam quod nesciunt? Quas, maxime.</p>
+    <button onclick="changeHeadingcolor()">Change Heading</button>
+    <button onclick="changepara()">Change Para</button>
+    
+</body>
+</html>
