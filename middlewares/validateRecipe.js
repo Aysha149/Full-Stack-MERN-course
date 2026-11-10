@@ -1,5 +1,5 @@
 const validateRecipe = (request, response, next) => {
-  const RecipeObj = request.body;
+const RecipeObj = request.body;
 
   if (!RecipeObj.name) {
     return response.status(400).json({
@@ -12,20 +12,24 @@ const validateRecipe = (request, response, next) => {
       message: "Cuisine is a required field",
     });
   }
-  
-  
+
   if (!RecipeObj.prepTimeMinutes) {
     return response.status(400).json({
       message: "Prep time is a required field",
     });
   }
 
-    if (!RecipeObj.cookTimeMinutes) {
+  if (!RecipeObj.cookTimeMinutes) {
     return response.status(400).json({
       message: "Cook time is a required field",
     });
   }
 
+  if (!RecipeObj.image) {
+    return response.status(400).json({
+      message: "Image is a required field",
+    });
+  }
 
   next();
 };

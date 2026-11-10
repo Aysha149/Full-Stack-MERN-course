@@ -10,6 +10,8 @@ const recipeSchema = new mongoose.Schema({
   ingredients: { type: String, required: true },
   prepTimeMinutes: { type: Number, required: true },
   cookTimeMinutes: { type: Number, required: true },
+  image: { type: String, required: true },
+
   isActive: {type: Boolean, default: true}
 },
 {
