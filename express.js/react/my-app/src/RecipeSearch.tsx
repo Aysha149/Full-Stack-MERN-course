@@ -7,6 +7,7 @@ type Recipe = {
   ingredients: string;
   prepTimeMinutes: number;
   cookTimeMinutes: number;
+  image?: string;
 };
 
 const RecipeSearch = () => {
@@ -14,7 +15,7 @@ const RecipeSearch = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
 
   const fetchRecipes = async () => {
-    const apiUrl = `http://localhost:3000/recipes?name=${searchTerm}`;
+    const apiUrl = `https://express-api-egw6.onrender.com/recipes?name=${searchTerm}`;
     console.log(apiUrl);
     const response = await fetch(apiUrl);
     const data = await response.json();
@@ -44,11 +45,11 @@ const RecipeSearch = () => {
         {recipes.map((recipe) => (
           <div className="col-md-3 mb-3" key={recipe._id}>
             <div className="card h-100">
-              {/* <img
+               <img
                 src={recipe.image}
                 className="card-img-top"
                 alt={recipe.name}
-              /> */}
+              /> 
               <div className="card-body">
                 <h5 className="card-title">{recipe.name}</h5>
                 <p className="card-text">Cuisine: {recipe.cuisine}</p>

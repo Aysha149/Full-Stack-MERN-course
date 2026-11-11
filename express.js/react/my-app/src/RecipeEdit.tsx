@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
-const API_URL = "https://6a7dddb8f8b2ed99ca4eec0e.mockapi.io/Recipes";
+const API_URL = "https://express-api-egw6.onrender.com/recipes";
 function RecipeEdit() {
   // Create provision to store data entered by the user
   const [name, setName] = useState<string>("");
-  const [prepTimeMinutes, setPrepTimeMinutes] = useState<string>("");
-  const [cookTimeMinutes, setCookTimeMinutes] = useState<string>("");
-  const [servings, setServings] = useState<string>("");
-  const [difficulty, setDifficulty] = useState<string>("");
-  const [cuisine, setCuisine] = useState<string>("");
+  const [cuisine, setcuisine] = useState<string>("");
+  const [ingredients, setingredients] = useState<string>("");
+  const [prepTimeMinutes, setprepTimeMinutes] = useState<string>("");
+  const [cookTimeMinutes, setcookTimeMinutes] = useState<string>("");
 
   const navigate = useNavigate();
   let params = useParams();
@@ -18,11 +17,10 @@ function RecipeEdit() {
     const response = await fetch(`${API_URL}/${params.id}`);
     const recipe = await response.json();
     setName(recipe.name);
-    setPrepTimeMinutes(recipe.prepTimeMinutes);
-    setCookTimeMinutes(recipe.cookTimeMinutes);
-    setServings(recipe.servings);
-    setDifficulty(recipe.difficulty);
-    setCuisine(recipe.cuisine);
+    setcuisine(recipe.cuisine);
+    setingredients(recipe.ingredients);
+    setprepTimeMinutes(recipe.prepTimeMinutes);
+    setcookTimeMinutes(recipe.cookTimeMinutes);
   };
 
   useEffect( () => {
@@ -32,12 +30,11 @@ function RecipeEdit() {
   const editRecipe = async () => {
     // JavaScript
     const recipe = {
-      name,
-      prepTimeMinutes,
-      cookTimeMinutes,
-      servings,
-      difficulty,
-      cuisine,
+       name,
+       cuisine,
+       ingredients,
+       prepTimeMinutes,
+       cookTimeMinutes,
     };
 
     await fetch(`${API_URL}/${params.id}`, {
@@ -70,43 +67,43 @@ function RecipeEdit() {
 
         <div className="mb-3">
           <label htmlFor="prepTimeTextBox" className="form-label text-warning">
-            Prep Time:{" "}
+            Cuisine:{" "}
           </label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Preparation Time in Minutes"
+            placeholder="Enter Cuisine"
             id="prepTimeTextBox"
-            value={prepTimeMinutes}
-            onChange={(event) => setPrepTimeMinutes(event.target.value)}
+            value={cuisine}
+            onChange={(event) => setcuisine(event.target.value)}
           />
         </div>
 
         <div className="mb-3">
           <label htmlFor="cookTimeTextBox" className="form-label text-warning">
-            Cook Time:{" "}
+            Ingredients:{" "}
           </label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Cooking Time in Minutes"
+            placeholder="Enter Ingredients"
             id="cookTimeTextBox"
-            value={cookTimeMinutes}
-            onChange={(event) => setCookTimeMinutes(event.target.value)}
+            value={ingredients}
+            onChange={(event) => setingredients(event.target.value)}
           />
         </div>
 
         <div className="mb-3">
           <label htmlFor="servingsTextBox" className="form-label text-warning">
-            Servings:{" "}
+            Preparation Time:{" "}
           </label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Number of Servings"
+            placeholder="Enter Preparation Time in Minutes"
             id="servingsTextBox"
-            value={servings}
-            onChange={(event) => setServings(event.target.value)}
+            value={prepTimeMinutes}
+            onChange={(event) => setprepTimeMinutes(event.target.value)}
           />
         </div>
 
@@ -115,31 +112,19 @@ function RecipeEdit() {
             htmlFor="difficultyTextBox"
             className="form-label text-warning"
           >
-            Difficulty:{" "}
+            Cook Time:{" "}
           </label>
           <input
             type="text"
             className="form-control"
-            placeholder="Enter Level of Difficulty (Easy, Medium, Hard)"
+            placeholder="Enter Cooking Time in Minutes"
             id="difficultyTextBox"
-            value={difficulty}
-            onChange={(event) => setDifficulty(event.target.value)}
+            value={cookTimeMinutes}
+            onChange={(event) => setcookTimeMinutes(event.target.value)}
           />
         </div>
 
-        <div className="mb-3">
-          <label htmlFor="cuisineTextBox" className="form-label text-warning">
-            Cuisine:{" "}
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="Enter Cuisine (Indian, Chinese, Bhatkali)"
-            id="cuisineTextBox"
-            value={cuisine}
-            onChange={(event) => setCuisine(event.target.value)}
-          />
-        </div>
+        
         
         <div className="mt-5">
           <button

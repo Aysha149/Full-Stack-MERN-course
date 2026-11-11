@@ -5,7 +5,6 @@ import Home from "./Home";
 import RecipeAdd from "./RecipeAdd";
 import RecipeEdit from "./RecipeEdit";
 import RecipeSearch from "./RecipeSearch"; 
-import LeaderList from "./LeaderList";
 
 function App() {
   return (
@@ -37,12 +36,7 @@ function App() {
               </Link>
             </li>
 
-            <li className="nav-item">
-              <Link className="nav-link fw-bold" to="/Leaders">
-                Leaders
-              </Link>
-            </li>
-
+            
         </ul>
 
         </div>
@@ -56,7 +50,6 @@ function App() {
              <Route path="/recipes-search" element={<RecipeSearch />} /> 
             <Route path="/recipes-add" element={<RecipeAdd />} />
             <Route path="/recipes-edit/:id" element={<RecipeEdit />} />
-            <Route path="/Leaders" element={<LeaderList />} />
 
             
           </Routes>
