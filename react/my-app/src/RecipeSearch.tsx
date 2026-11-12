@@ -43,23 +43,23 @@ const RecipeSearch = () => {
 
       <div className="row">
         {recipes.map((recipe) => (
-          <div className="col-md-3 mb-3" key={recipe._id}>
-            <div className="card h-100">
-               <img
+          <div className="col-md-3 mb-3 d-flex" key={recipe._id}>
+          <div className="card h-100">
+           <img
                 src={recipe.image}
                 className="card-img-top"
                 alt={recipe.name}
               /> 
-              <div className="card-body">
-                <h5 className="card-title">{recipe.name}</h5>
-                <p className="card-text">Cuisine: {recipe.cuisine}</p>
-                <p className="card-text">Ingredients: {recipe.ingredients}</p>
-                <p className="card-text">Preparation Time: {recipe.prepTimeMinutes} minutes</p>
-                <p className="card-text">Cooking Time: {recipe.cookTimeMinutes} minutes</p>
+       <div className="card-body d-flex flex-column">
+          <h5 className="card-title">{recipe.name}</h5>
+          <p className="card-text">Cuisine: {recipe.cuisine}</p>
+          <p className="card-text">Ingredients: {recipe.ingredients}</p>
+          <p className="card-text">Preparation Time: {recipe.prepTimeMinutes} minutes</p>
+          <p className="card-text">Cooking Time: {recipe.cookTimeMinutes} minutes</p>
 
-                <a href="#" className="btn btn-primary">
+          <a href="#" className="btn btn-primary mt-auto">
                   View Details
-                </a>
+              </a>
               </div>
             </div>
           </div>
