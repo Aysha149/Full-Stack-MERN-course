@@ -9,12 +9,10 @@ import RecipeSearch from "./RecipeSearch";
 function App() {
   return (
        <Router>
-      <nav
-        className="navbar navbar-expand-lg"
-      >
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid px-4">
           <Link className="navbar-brand fw-bold" to="/">
-             My App
+             Recipe App
           </Link>
 
           <ul className="navbar-nav ms-auto">

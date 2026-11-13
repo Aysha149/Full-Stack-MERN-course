@@ -24,9 +24,9 @@ const RecipeSearch = () => {
   };
 
   return (
-    <div className="container">
-      <h1 className="text-success fw-bold mb-3">Search Recipes</h1>
-      <div className="d-flex mb-4">
+<div className="container bg-light rounded-3 p-4">
+    <h1 className="text-success fw-bold mb-3">Search Recipes</h1>
+      <div className="d-flex mb-5">
         <input
           type="text"
           className="form-control me-3"
@@ -36,27 +36,30 @@ const RecipeSearch = () => {
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button className="btn btn-primary" onClick={() => fetchRecipes()}>
+        <button className="btn btn-success mt-auto rounded-3 fw-bold" onClick={() => fetchRecipes()}>
           Search
         </button>
       </div>
 
       <div className="row">
         {recipes.map((recipe) => (
-          <div className="col-md-3 mb-3 d-flex" key={recipe._id}>
-          <div className="card h-100">
+          <div className="col-md-3 mb-4 d-flex" key={recipe._id}>
+          <div className="card h-100 shadow-sm border-0 rounded-3">
            <img
-                src={recipe.image}
-                className="card-img-top"
-                alt={recipe.name}
-              /> 
+              src={recipe.image}
+              className="card-img-top rounded-top-3"
+              alt={recipe.name}
+              height="190"
+               />
        <div className="card-body d-flex flex-column">
-          <h5 className="card-title card-text fw-bold">{recipe.name}</h5>
+          <h5 className="card-title fw-bold fs-4 text-center text-warning-emphasis border-bottom pb-3 mb-3">
+                {recipe.name}
+          </h5>
           <p className="card-text"> <b className="fw-bold">Ingredients:</b> {recipe.ingredients}</p>
          <p className="card-text"> <b className="fw-bold">Preparation Time:</b> {recipe.prepTimeMinutes} minutes</p>
          <p className="card-text"> <b className="fw-bold">Cooking Time:</b> {recipe.cookTimeMinutes} minutes</p>
 
-          <a href="#" className="btn btn-primary mt-auto">
+          <a href="#" className="btn btn-success mt-auto">
                   View Details
               </a>
               </div>
@@ -64,8 +67,9 @@ const RecipeSearch = () => {
           </div>
         ))}
       </div>
-    </div>
+  </div>
   );
 };
+
 
 export default RecipeSearch;
