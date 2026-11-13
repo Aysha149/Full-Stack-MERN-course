@@ -51,11 +51,10 @@ const RecipeSearch = () => {
                 alt={recipe.name}
               /> 
        <div className="card-body d-flex flex-column">
-          <h5 className="card-title">{recipe.name}</h5>
-          <p className="card-text">Cuisine: {recipe.cuisine}</p>
-          <p className="card-text">Ingredients: {recipe.ingredients}</p>
-          <p className="card-text">Preparation Time: {recipe.prepTimeMinutes} minutes</p>
-          <p className="card-text">Cooking Time: {recipe.cookTimeMinutes} minutes</p>
+          <h5 className="card-title card-text fw-bold">{recipe.name}</h5>
+          <p className="card-text"> <b className="fw-bold">Ingredients:</b> {recipe.ingredients}</p>
+         <p className="card-text"> <b className="fw-bold">Preparation Time:</b> {recipe.prepTimeMinutes} minutes</p>
+         <p className="card-text"> <b className="fw-bold">Cooking Time:</b> {recipe.cookTimeMinutes} minutes</p>
 
           <a href="#" className="btn btn-primary mt-auto">
                   View Details
